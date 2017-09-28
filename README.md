@@ -4,7 +4,7 @@ Additional utilities for PureScript Strings.
 
 
 [![Latest release](http://img.shields.io/github/release/purescript-contrib/purescript-strings-extra.svg)](https://github.com/purescript/purescript-strings-extra/releases)
-[![Build status](https://travis-ci.org/purescript/purescript-strings-extra.svg?branch=master)](https://travis-ci.org/purescript/purescript-strings-extra)
+[![Build status](https://travis-ci.org/purescript-contrib/purescript-strings-extra.svg?branch=master)](https://travis-ci.org/purescript/purescript-strings-extra)
 
 
 ## Installation
