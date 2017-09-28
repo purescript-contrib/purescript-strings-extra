@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "pulp build",
+    "build": "pulp build -- --censor-lib --strict",
     "clean": "rimraf output && rimraf .pulp-cache",
     "test": "pulp test"
   },

@@ -10,13 +10,12 @@ import Data.Array as Array
 import Data.Char.Unicode as Unicode
 import Data.Either (fromRight)
 import Data.Foldable (foldMap)
-import Data.Maybe (Maybe)
 import Data.String as String
 import Data.String.Regex (Regex)
 import Data.String.Regex as Regex
 import Data.String.Regex.Flags as Flags
 import Partial.Unsafe (unsafePartial)
-import Prelude (($), (>>>), (<>), map)
+import Prelude ((>>>), (<>), map)
 
 -- | Converts a `String` to camel case
 -- | ```purescript
