@@ -3,14 +3,14 @@
 Additional utilities for PureScript Strings.
 
 
-[![Latest release](http://img.shields.io/github/release/purescript/purescript-string-extras.svg)](https://github.com/purescript/purescript-string-extras/releases)
-[![Build status](https://travis-ci.org/purescript/purescript-string-extras.svg?branch=master)](https://travis-ci.org/purescript/purescript-string-extras)
+[![Latest release](http://img.shields.io/github/release/purescript-contrib/purescript-strings-extra.svg)](https://github.com/purescript/purescript-strings-extra/releases)
+[![Build status](https://travis-ci.org/purescript/purescript-strings-extra.svg?branch=master)](https://travis-ci.org/purescript/purescript-strings-extra)
 
 
 ## Installation
 
 ```bash
-bower install purescript-string-extras
+bower install purescript-strings-extra
 ```
 
-Module documentation is [published on Pursuit](http://pursuit.purescript.org/packages/purescript-string-extras).
+Module documentation is [published on Pursuit](http://pursuit.purescript.org/packages/purescript-strings-extra).
