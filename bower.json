@@ -1,0 +1,36 @@
+{
+  "name": "purescript-string-extra",
+  "homepage": "https://github.com/purescript-contrib/purescript-string-extras",
+  "description": "Additional String utilities",
+  "keywords": [
+    "purescript"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "bower.json",
+    "Gruntfile.js",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript-contrib/purescript-string-extras.git"
+  },
+  "dependencies": {
+    "purescript-strings": "^3.3.1",
+    "purescript-prelude": "^3.1.0",
+    "purescript-maybe": "^3.0.0",
+    "purescript-partial": "^1.2.1",
+    "purescript-either": "^3.1.0",
+    "purescript-foldable-traversable": "^3.6.1",
+    "purescript-unicode": "^3.0.1",
+    "purescript-arrays": "^4.2.0"
+  },
+  "devDependencies": {
+    "purescript-assert": "^3.0.0",
+    "purescript-console": "^3.0.0"
+  }
+}
