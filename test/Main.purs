@@ -1,12 +1,12 @@
 module Test.Main where
 
-import Control.Monad.Eff (Eff)
-import Control.Monad.Eff.Console (CONSOLE, log)
 import Data.String.Extra as String
+import Effect (Effect)
+import Effect.Console (log)
 import Prelude (Unit, ($), (==), (*>), discard)
-import Test.Assert (ASSERT, assert)
+import Test.Assert (assert)
 
-main :: forall eff. Eff (assert :: ASSERT, console :: CONSOLE | eff) Unit
+main :: Effect Unit
 main = do
   log "camelCase" *> do
     assert $ String.camelCase "" == ""
