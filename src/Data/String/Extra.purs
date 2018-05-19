@@ -7,6 +7,7 @@ module Data.String.Extra
   ) where
 
 import Data.Array as Array
+import Data.Array.NonEmpty as NEA
 import Data.Char.Unicode as Unicode
 import Data.Either (fromRight)
 import Data.Foldable (foldMap)
@@ -76,7 +77,7 @@ regexGlobal regexStr =
 asciiWords :: String -> Array String
 asciiWords =
   Regex.match (regexGlobal "[^\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]+")
-    >>> foldMap Array.catMaybes
+    >>> foldMap NEA.catMaybes
 
 hasUnicodeWords :: String -> Boolean
 hasUnicodeWords =
@@ -92,7 +93,7 @@ toUnicodeUpper =
 
 unicodeWords :: String -> Array String
 unicodeWords =
-  Regex.match (regexGlobal regexStr) >>> foldMap Array.catMaybes
+  Regex.match (regexGlobal regexStr) >>> foldMap NEA.catMaybes
   where
     -- https://github.com/lodash/lodash/blob/master/.internal/unicodeWords.js
     -- Used to compose unicode character classes.
