@@ -20,17 +20,17 @@
     "url": "git://github.com/purescript-contrib/purescript-string-extras.git"
   },
   "dependencies": {
-    "purescript-strings": "#compiler/0.12",
-    "purescript-prelude": "#compiler/0.12",
-    "purescript-maybe": "#compiler/0.12",
-    "purescript-partial": "#compiler/0.12",
-    "purescript-either": "#compiler/0.12",
-    "purescript-foldable-traversable": "#compiler/0.12",
-    "purescript-unicode": "justinwoo/purescript-unicode#compiler/0.12",
-    "purescript-arrays": "#compiler/0.12"
+    "purescript-strings": "^4.0.0",
+    "purescript-prelude": "^4.0.0",
+    "purescript-maybe": "^4.0.0",
+    "purescript-partial": "^2.0.0",
+    "purescript-either": "^4.0.0",
+    "purescript-foldable-traversable": "^4.0.0",
+    "purescript-unicode": "^4.0.0",
+    "purescript-arrays": "^5.0.0"
   },
   "devDependencies": {
-    "purescript-assert": "#compiler/0.12",
-    "purescript-console": "#compiler/0.12"
+    "purescript-assert": "^4.0.0",
+    "purescript-console": "^4.1.0"
   }
 }
