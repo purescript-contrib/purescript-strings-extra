@@ -14,5 +14,7 @@ yarn.lock
 /node_modules/
 /output/
 /tmp/
+/.psc-package/
 
 .psc-ide-port
+

@@ -7,10 +7,12 @@ module Data.String.Extra
   ) where
 
 import Data.Array as Array
+import Data.Array.NonEmpty as NonEmptyArray
 import Data.Char.Unicode as Unicode
 import Data.Either (fromRight)
 import Data.Foldable (foldMap)
 import Data.String as String
+import Data.String.CodeUnits as SCU
 import Data.String.Regex (Regex)
 import Data.String.Regex as Regex
 import Data.String.Regex.Flags as Flags
@@ -66,8 +68,8 @@ words string =
 
 upfirst :: String -> String
 upfirst =
-  String.uncons >>> foldMap \{ head, tail } ->
-    String.singleton (Unicode.toUpper head) <> toUnicodeLower tail
+  SCU.uncons >>> foldMap \{ head, tail } ->
+    SCU.singleton (Unicode.toUpper head) <> toUnicodeLower tail
 
 regexGlobal :: String -> Regex
 regexGlobal regexStr =
@@ -76,7 +78,7 @@ regexGlobal regexStr =
 asciiWords :: String -> Array String
 asciiWords =
   Regex.match (regexGlobal "[^\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]+")
-    >>> foldMap Array.catMaybes
+    >>> foldMap NonEmptyArray.catMaybes
 
 hasUnicodeWords :: String -> Boolean
 hasUnicodeWords =
@@ -84,15 +86,15 @@ hasUnicodeWords =
 
 toUnicodeLower :: String -> String
 toUnicodeLower =
-  String.toCharArray >>> map Unicode.toLower >>> String.fromCharArray
+  SCU.toCharArray >>> map Unicode.toLower >>> SCU.fromCharArray
 
 toUnicodeUpper :: String -> String
 toUnicodeUpper =
-  String.toCharArray >>> map Unicode.toUpper >>> String.fromCharArray
+  SCU.toCharArray >>> map Unicode.toUpper >>> SCU.fromCharArray
 
 unicodeWords :: String -> Array String
 unicodeWords =
-  Regex.match (regexGlobal regexStr) >>> foldMap Array.catMaybes
+  Regex.match (regexGlobal regexStr) >>> foldMap NonEmptyArray.catMaybes
   where
     -- https://github.com/lodash/lodash/blob/master/.internal/unicodeWords.js
     -- Used to compose unicode character classes.
