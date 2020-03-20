@@ -18,3 +18,5 @@ yarn.lock
 
 .psc-ide-port
 
+yarn.lock
+package-lock.json
