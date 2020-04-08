@@ -4,6 +4,8 @@ module Data.String.Extra
   , pascalCase
   , snakeCase
   , words
+  , levenshtein
+  , sorensenDiceCoefficient
   ) where
 
 import Data.Array as Array
@@ -63,6 +65,19 @@ words string =
     unicodeWords string
   else
     asciiWords string
+
+-- | Calculates the levenshtein distance between two strings.
+-- | ```purescript
+-- | levenshtein "book" "back" -- 2
+-- | ```
+foreign import levenshtein :: String -> String -> Int
+
+-- | Calculates the Sørensen-Dice coefficient between two strings.
+-- | ```purescript
+-- | sorensenDiceCoefficient "WHIRLED" "WORLD" -- 0.2000
+-- | ```
+foreign import sorensenDiceCoefficient :: String -> String -> Number
+
 
 ------------------------------------------------------------------------------
 
