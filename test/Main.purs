@@ -1,11 +1,11 @@
 module Test.Main where
 
+import Data.Int as Int
 import Data.String.Extra as String
 import Effect (Effect)
 import Effect.Console (log)
-import Prelude (Unit, ($), (==), (*>), discard)
+import Prelude (Unit, ($), (==), (*>), discard, (*))
 import Test.Assert (assert)
-import Data.Number.Approximate ((≅))
 
 main :: Effect Unit
 main = do
@@ -72,13 +72,20 @@ main = do
     assert $ String.levenshtein "IDENTICAL STRINGS" "IDENTICAL STRINGS" == 0
 
   -- Verified with: http://www.algomation.com/algorithm/sorensen-dice-string-similarity
-  log "sorensen_dice_coefficient" *> do
-    assert $ String.sorensen_dice_coefficient "CONSERVATIONALISTS" "CONVERSATIONALISTS" ≅ 0.7647059
-    assert $ String.sorensen_dice_coefficient "WHIRLED" "WORLD" ≅ 0.2000000
-    assert $ String.sorensen_dice_coefficient "COMPLEMENT" "COMPLIMENT" ≅ 0.7777778
-    assert $ String.sorensen_dice_coefficient "BAZAAR" "BIZARRE" ≅ 0.36363637
-    assert $ String.sorensen_dice_coefficient "ACCESSARY" "ACCESSORY" ≅ 0.7500000
-    assert $ String.sorensen_dice_coefficient "ALGORITHMS ARE FUN" "LOGARITHMS ARE NOT" ≅ 0.5882353
-    assert $ String.sorensen_dice_coefficient "ASSISTANCE" "ASSISTANTS" ≅ 0.7777778
-    assert $ String.sorensen_dice_coefficient "ALL TOGETHER" "ALTOGETHER" ≅ 0.8000000
-    assert $ String.sorensen_dice_coefficient "IDENTICAL STRINGS" "IDENTICAL STRINGS" ≅ 1.0000000
+  log "sorensenDiceCoefficient" *> do
+    assert $ normalizedCoefficient "CONSERVATIONALISTS" "CONVERSATIONALISTS" == (normalize 0.7647059)
+    assert $ normalizedCoefficient "WHIRLED" "WORLD" == (normalize 0.2000000)
+    assert $ normalizedCoefficient "COMPLEMENT" "COMPLIMENT" == (normalize 0.7777778)
+    assert $ normalizedCoefficient "BAZAAR" "BIZARRE" == (normalize 0.36363637)
+    assert $ normalizedCoefficient "ACCESSARY" "ACCESSORY" == (normalize 0.7500000)
+    assert $ normalizedCoefficient "ALGORITHMS ARE FUN" "LOGARITHMS ARE NOT" == (normalize 0.5882353)
+    assert $ normalizedCoefficient "ASSISTANCE" "ASSISTANTS" == (normalize 0.7777778)
+    assert $ normalizedCoefficient "ALL TOGETHER" "ALTOGETHER" == (normalize 0.8000000)
+    assert $ normalizedCoefficient "IDENTICAL STRINGS" "IDENTICAL STRINGS" == (normalize 1.0000000)
+
+
+normalize :: Number -> Int
+normalize n = Int.round (n * 100000.0)
+
+normalizedCoefficient :: String -> String -> Int
+normalizedCoefficient a b = normalize (String.sorensenDiceCoefficient a b)
