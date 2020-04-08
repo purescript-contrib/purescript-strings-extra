@@ -5,7 +5,7 @@ module Data.String.Extra
   , snakeCase
   , words
   , levenshtein
-  , sorensen_dice_coefficient
+  , sorensenDiceCoefficient
   ) where
 
 import Data.Array as Array
@@ -74,9 +74,9 @@ foreign import levenshtein :: String -> String -> Int
 
 -- | Calculates the Sørensen-Dice coefficient between two strings.
 -- | ```purescript
--- | levenshtein "WHIRLED" "WORLD" -- 0.2000
+-- | sorensenDiceCoefficient "WHIRLED" "WORLD" -- 0.2000
 -- | ```
-foreign import sorensen_dice_coefficient :: String -> String -> Number
+foreign import sorensenDiceCoefficient :: String -> String -> Number
 
 
 ------------------------------------------------------------------------------
