@@ -69,8 +69,8 @@ exports.sorensenDiceCoefficient = function (l) {
   return function (r) {
     if (l.length < 2 || r.length < 2) return 0;
 
-    let lBigrams = new Map();
-    for (let i = 0; i < l.length - 1; i++) {
+    var lBigrams = new Map();
+    for (var i = 0; i < l.length - 1; i++) {
       const bigram = l.substr(i, 2);
       const count = lBigrams.has(bigram)
         ? lBigrams.get(bigram) + 1
@@ -79,8 +79,8 @@ exports.sorensenDiceCoefficient = function (l) {
       lBigrams.set(bigram, count);
     }
 
-    let intersectionSize = 0;
-    for (let i = 0; i < r.length - 1; i++) {
+    var intersectionSize = 0;
+    for (var i = 0; i < r.length - 1; i++) {
       const bigram = r.substr(i, 2);
       const count = lBigrams.has(bigram)
         ? lBigrams.get(bigram)
