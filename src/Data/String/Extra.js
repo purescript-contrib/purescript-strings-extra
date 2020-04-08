@@ -2,8 +2,8 @@
 
 // Source: https://github.com/hiddentao/fast-levenshtein/blob/master/levenshtein.js
 // Benchmark: https://jsperf.com/levenshtein-distance2
-exports.levenshtein = str1 => {
-  return str2 => {
+exports.levenshtein = function (str1) {
+  return function (str2) {
     var prevRow = [],
         str2Char = [];
 
@@ -22,6 +22,7 @@ exports.levenshtein = str1 => {
       prevRow[i] = i;
       str2Char[i] = str2.charCodeAt(i);
     }
+
     prevRow[str2Len] = str2Len;
 
     var strCmp;
@@ -43,6 +44,7 @@ exports.levenshtein = str1 => {
         if (nextCol > tmp) {
           nextCol = tmp;
         }
+
         // deletion
         tmp = prevRow[j + 1] + 1;
         if (nextCol > tmp) {
@@ -63,8 +65,8 @@ exports.levenshtein = str1 => {
 
 // Source: https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Dice%27s_coefficient#Javascript
 // Benchmark: https://jsperf.com/sorensen-dice-coefficient
-exports.sorensenDiceCoefficient = l => {
-  return r => {
+exports.sorensenDiceCoefficient = function (l) {
+  return function (r) {
     if (l.length < 2 || r.length < 2) return 0;
 
     let lBigrams = new Map();
@@ -75,7 +77,7 @@ exports.sorensenDiceCoefficient = l => {
         : 1;
 
       lBigrams.set(bigram, count);
-    };
+    }
 
     let intersectionSize = 0;
     for (let i = 0; i < r.length - 1; i++) {
