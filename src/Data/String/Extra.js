@@ -63,7 +63,7 @@ exports.levenshtein = str1 => {
 
 // Source: https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Dice%27s_coefficient#Javascript
 // Benchmark: https://jsperf.com/sorensen-dice-coefficient
-exports.sorensen_dice_coefficient = l => {
+exports.sorensenDiceCoefficient = l => {
   return r => {
     if (l.length < 2 || r.length < 2) return 0;
 
