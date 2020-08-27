@@ -3,6 +3,7 @@ module Data.String.Extra
   , kebabCase
   , pascalCase
   , snakeCase
+  , upperCaseFirst
   , words
   , levenshtein
   , sorensenDiceCoefficient
@@ -44,7 +45,7 @@ kebabCase =
 -- | ```
 pascalCase :: String -> String
 pascalCase =
-  words >>> foldMap upfirst
+  words >>> foldMap upperCaseFirst
 
 -- | Converts a `String` to snake case
 -- | ```purescript
@@ -53,6 +54,16 @@ pascalCase =
 snakeCase :: String -> String
 snakeCase =
   words >>> map toUnicodeLower >>> String.joinWith "_"
+
+-- | Converts the first character in a `String` to upper case, lower-casing
+-- | the rest of the string.
+-- | ```purescript
+-- | upperCaseFirst "hellO" == "Hello"
+-- | ```
+upperCaseFirst :: String -> String
+upperCaseFirst =
+  SCU.uncons >>> foldMap \{ head, tail } ->
+    SCU.singleton (Unicode.toUpper head) <> toUnicodeLower tail
 
 -- | Separates a `String` into words based on Unicode separators, capital
 -- | letters, dashes, underscores, etc.
@@ -80,11 +91,6 @@ foreign import sorensenDiceCoefficient :: String -> String -> Number
 
 
 ------------------------------------------------------------------------------
-
-upfirst :: String -> String
-upfirst =
-  SCU.uncons >>> foldMap \{ head, tail } ->
-    SCU.singleton (Unicode.toUpper head) <> toUnicodeLower tail
 
 regexGlobal :: String -> Regex
 regexGlobal regexStr =
