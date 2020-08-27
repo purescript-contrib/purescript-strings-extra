@@ -58,7 +58,7 @@ snakeCase =
 -- | Converts the first character in a `String` to upper case, lower-casing
 -- | the rest of the string.
 -- | ```purescript
--- | upperCaseFirst "hellO" == "Hello"
+-- | upperCaseFirst "hello World" == "Hello world"
 -- | ```
 upperCaseFirst :: String -> String
 upperCaseFirst =

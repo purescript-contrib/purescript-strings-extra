@@ -51,13 +51,13 @@ main = do
 
   log "upperCaseFirst" *> do
     assert $ String.upperCaseFirst "" == ""
-    assert $ String.upperCaseFirst " " == ""
-    assert $ String.upperCaseFirst "\n" == ""
+    assert $ String.upperCaseFirst " " == " "
+    assert $ String.upperCaseFirst "\n" == "\n"
     assert $ String.upperCaseFirst "🙃" == "🙃"
     assert $ String.upperCaseFirst "Thor" == "Thor"
-    assert $ String.upperCaseFirst "Thor, Mímir, Ēostre, & Jörð" == "Thormímirēostrejörð"
-    assert $ String.upperCaseFirst "🙃, Mímir, ēostre, & Jörð" == "🙃mímirēostrejörð"
-    assert $ String.upperCaseFirst "thorMímir--Ēostre_Jörð" == "ThormímirĒostrejörð"
+    assert $ String.upperCaseFirst "Thor, Mímir, Ēostre, & Jörð" == "Thor, mímir, ēostre, & jörð"
+    assert $ String.upperCaseFirst "🙃, Mímir, ēostre, & Jörð" == "🙃, mímir, ēostre, & jörð"
+    assert $ String.upperCaseFirst "thorMímir--Ēostre_Jörð" == "Thormímir--ēostre_jörð"
 
   log "words" *> do
     assert $ String.words "" == []
