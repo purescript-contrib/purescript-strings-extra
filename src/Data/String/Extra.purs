@@ -24,7 +24,7 @@ import Prelude ((>>>), (<>), map)
 
 -- | Converts a `String` to camel case
 -- | ```purescript
--- | camelCase "Hello world!" == "helloWorld"
+-- | camelCase "Hello world" == "helloWorld"
 -- | ```
 camelCase :: String -> String
 camelCase =
@@ -33,7 +33,7 @@ camelCase =
 
 -- | Converts a `String` to kebab case
 -- | ```purescript
--- | kebabCase "Hello world!" == "hello-world"
+-- | kebabCase "Hello world" == "hello-world"
 -- | ```
 kebabCase :: String -> String
 kebabCase =
@@ -41,7 +41,7 @@ kebabCase =
 
 -- | Converts a `String` to Pascal case
 -- | ```purescript
--- | pascalCase "Hello world!" == "HelloWorld"
+-- | pascalCase "Hello world" == "HelloWorld"
 -- | ```
 pascalCase :: String -> String
 pascalCase =
@@ -49,7 +49,7 @@ pascalCase =
 
 -- | Converts a `String` to snake case
 -- | ```purescript
--- | snakeCase "Hello world!" == "hello_world"
+-- | snakeCase "Hello world" == "hello_world"
 -- | ```
 snakeCase :: String -> String
 snakeCase =
@@ -68,7 +68,7 @@ upperCaseFirst =
 -- | Separates a `String` into words based on Unicode separators, capital
 -- | letters, dashes, underscores, etc.
 -- | ```purescript
--- | words "Hello_world! --from TheAliens" == [ "Hello", "world", "from", "The", "Aliens" ]
+-- | words "Hello_world --from TheAliens" == [ "Hello", "world", "from", "The", "Aliens" ]
 -- | ```
 words :: String -> Array String
 words string =
