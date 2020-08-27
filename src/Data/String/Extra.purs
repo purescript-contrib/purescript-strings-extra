@@ -3,6 +3,7 @@ module Data.String.Extra
   , kebabCase
   , pascalCase
   , snakeCase
+  , upperCaseFirst
   , words
   , levenshtein
   , sorensenDiceCoefficient
@@ -23,7 +24,7 @@ import Prelude ((>>>), (<>), map)
 
 -- | Converts a `String` to camel case
 -- | ```purescript
--- | camelCase "Hello world!" == "helloWorld"
+-- | camelCase "Hello world" == "helloWorld"
 -- | ```
 camelCase :: String -> String
 camelCase =
@@ -32,7 +33,7 @@ camelCase =
 
 -- | Converts a `String` to kebab case
 -- | ```purescript
--- | kebabCase "Hello world!" == "hello-world"
+-- | kebabCase "Hello world" == "hello-world"
 -- | ```
 kebabCase :: String -> String
 kebabCase =
@@ -40,24 +41,34 @@ kebabCase =
 
 -- | Converts a `String` to Pascal case
 -- | ```purescript
--- | pascalCase "Hello world!" == "HelloWorld"
+-- | pascalCase "Hello world" == "HelloWorld"
 -- | ```
 pascalCase :: String -> String
 pascalCase =
-  words >>> foldMap upfirst
+  words >>> foldMap upperCaseFirst
 
 -- | Converts a `String` to snake case
 -- | ```purescript
--- | snakeCase "Hello world!" == "hello_world"
+-- | snakeCase "Hello world" == "hello_world"
 -- | ```
 snakeCase :: String -> String
 snakeCase =
   words >>> map toUnicodeLower >>> String.joinWith "_"
 
+-- | Converts the first character in a `String` to upper case, lower-casing
+-- | the rest of the string.
+-- | ```purescript
+-- | upperCaseFirst "hello World" == "Hello world"
+-- | ```
+upperCaseFirst :: String -> String
+upperCaseFirst =
+  SCU.uncons >>> foldMap \{ head, tail } ->
+    SCU.singleton (Unicode.toUpper head) <> toUnicodeLower tail
+
 -- | Separates a `String` into words based on Unicode separators, capital
 -- | letters, dashes, underscores, etc.
 -- | ```purescript
--- | words "Hello_world! --from TheAliens" == [ "Hello", "world", "from", "The", "Aliens" ]
+-- | words "Hello_world --from TheAliens" == [ "Hello", "world", "from", "The", "Aliens" ]
 -- | ```
 words :: String -> Array String
 words string =
@@ -80,11 +91,6 @@ foreign import sorensenDiceCoefficient :: String -> String -> Number
 
 
 ------------------------------------------------------------------------------
-
-upfirst :: String -> String
-upfirst =
-  SCU.uncons >>> foldMap \{ head, tail } ->
-    SCU.singleton (Unicode.toUpper head) <> toUnicodeLower tail
 
 regexGlobal :: String -> Regex
 regexGlobal regexStr =

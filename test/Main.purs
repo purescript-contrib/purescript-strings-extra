@@ -49,6 +49,16 @@ main = do
     assert $ String.snakeCase "🙃, Mímir, ēostre, & Jörð" == "🙃_mímir_ēostre_jörð"
     assert $ String.snakeCase "thorMímir--Ēostre_Jörð" == "thor_mímir_ēostre_jörð"
 
+  log "upperCaseFirst" *> do
+    assert $ String.upperCaseFirst "" == ""
+    assert $ String.upperCaseFirst " " == " "
+    assert $ String.upperCaseFirst "\n" == "\n"
+    assert $ String.upperCaseFirst "🙃" == "🙃"
+    assert $ String.upperCaseFirst "Thor" == "Thor"
+    assert $ String.upperCaseFirst "Thor, Mímir, Ēostre, & Jörð" == "Thor, mímir, ēostre, & jörð"
+    assert $ String.upperCaseFirst "🙃, Mímir, ēostre, & Jörð" == "🙃, mímir, ēostre, & jörð"
+    assert $ String.upperCaseFirst "thorMímir--Ēostre_Jörð" == "Thormímir--ēostre_jörð"
+
   log "words" *> do
     assert $ String.words "" == []
     assert $ String.words " " == []
