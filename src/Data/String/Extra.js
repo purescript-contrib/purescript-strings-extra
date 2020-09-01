@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 "use strict";
 
 // Source: https://github.com/hiddentao/fast-levenshtein/blob/master/levenshtein.js
@@ -5,10 +6,10 @@
 exports.levenshtein = function (str1) {
   return function (str2) {
     var prevRow = [],
-        str2Char = [];
+      str2Char = [];
 
     var str1Len = str1.length,
-        str2Len = str2.length;
+      str2Len = str2.length;
 
     // base cases
     if (str1Len === 0) return str2Len;
@@ -70,24 +71,21 @@ exports.sorensenDiceCoefficient = function (l) {
     if (l.length < 2 || r.length < 2) return 0;
 
     var lBigrams = new Map();
-    for (var i = 0; i < l.length - 1; i++) {
-      const bigram = l.substr(i, 2);
-      const count = lBigrams.has(bigram)
-        ? lBigrams.get(bigram) + 1
-        : 1;
 
-      lBigrams.set(bigram, count);
+    for (var i = 0; i < l.length - 1; i++) {
+      var lBigram = l.substr(i, 2);
+      var lCount = lBigrams.has(lBigram) ? lBigrams.get(lBigram) + 1 : 1;
+
+      lBigrams.set(lBigram, lCount);
     }
 
     var intersectionSize = 0;
-    for (var i = 0; i < r.length - 1; i++) {
-      const bigram = r.substr(i, 2);
-      const count = lBigrams.has(bigram)
-        ? lBigrams.get(bigram)
-        : 0;
+    for (var j = 0; j < r.length - 1; j++) {
+      var rBigram = r.substr(j, 2);
+      var rCount = lBigrams.has(rBigram) ? lBigrams.get(rBigram) : 0;
 
-      if (count > 0) {
-        lBigrams.set(bigram, count - 1);
+      if (rCount > 0) {
+        lBigrams.set(rBigram, rCount - 1);
         intersectionSize++;
       }
     }

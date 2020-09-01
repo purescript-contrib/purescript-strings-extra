@@ -1,23 +1,12 @@
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-Icon?
-ehthumbs.db
-Thumbs.db
-.Trash*
-.history/
+.*
+!.gitignore
+!.github
+!.editorconfig
+!.eslintrc.json
 
-yarn.lock
-/bower_components/
-/node_modules/
-/output/
-/tmp/
-/.psc-package/
-/.spago/
+output
+generated-docs
+bower_components
 
-.psc-ide-port
-
-yarn.lock
-package-lock.json
+node_modules
+*.lock

@@ -23,7 +23,8 @@ import Partial.Unsafe (unsafePartial)
 import Prelude ((>>>), (<>), map)
 
 -- | Converts a `String` to camel case
--- | ```purescript
+-- |
+-- | ```purs
 -- | camelCase "Hello world" == "helloWorld"
 -- | ```
 camelCase :: String -> String
@@ -32,7 +33,8 @@ camelCase =
     toUnicodeLower head <> foldMap pascalCase tail
 
 -- | Converts a `String` to kebab case
--- | ```purescript
+-- |
+-- | ```pures
 -- | kebabCase "Hello world" == "hello-world"
 -- | ```
 kebabCase :: String -> String
@@ -40,7 +42,8 @@ kebabCase =
   words >>> map toUnicodeLower >>> String.joinWith "-"
 
 -- | Converts a `String` to Pascal case
--- | ```purescript
+-- |
+-- | ```purs
 -- | pascalCase "Hello world" == "HelloWorld"
 -- | ```
 pascalCase :: String -> String
@@ -48,7 +51,8 @@ pascalCase =
   words >>> foldMap upperCaseFirst
 
 -- | Converts a `String` to snake case
--- | ```purescript
+-- |
+-- | ```purs
 -- | snakeCase "Hello world" == "hello_world"
 -- | ```
 snakeCase :: String -> String
@@ -57,7 +61,8 @@ snakeCase =
 
 -- | Converts the first character in a `String` to upper case, lower-casing
 -- | the rest of the string.
--- | ```purescript
+-- |
+-- | ```purs
 -- | upperCaseFirst "hello World" == "Hello world"
 -- | ```
 upperCaseFirst :: String -> String
@@ -67,7 +72,8 @@ upperCaseFirst =
 
 -- | Separates a `String` into words based on Unicode separators, capital
 -- | letters, dashes, underscores, etc.
--- | ```purescript
+-- |
+-- | ```purs
 -- | words "Hello_world --from TheAliens" == [ "Hello", "world", "from", "The", "Aliens" ]
 -- | ```
 words :: String -> Array String
@@ -77,18 +83,19 @@ words string =
   else
     asciiWords string
 
--- | Calculates the levenshtein distance between two strings.
--- | ```purescript
+-- | Calculates the Levenshtein distance between two strings.
+-- |
+-- | ```purs
 -- | levenshtein "book" "back" -- 2
 -- | ```
 foreign import levenshtein :: String -> String -> Int
 
 -- | Calculates the Sørensen-Dice coefficient between two strings.
--- | ```purescript
+-- |
+-- | ```purs
 -- | sorensenDiceCoefficient "WHIRLED" "WORLD" -- 0.2000
 -- | ```
 foreign import sorensenDiceCoefficient :: String -> String -> Number
-
 
 ------------------------------------------------------------------------------
 
