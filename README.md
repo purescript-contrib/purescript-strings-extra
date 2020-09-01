@@ -17,7 +17,16 @@ spago install strings-extra
 
 ## Quick start
 
-The quick start hasn't been written yet (contributions are welcome!). The quick start covers a common, minimal use case for the library, whereas longer examples and tutorials are kept in the [docs directory](./docs.)
+This library provides a simple grab bag of utilities that augment the core `strings` library for PureScript. Install the library and use the functions you need. If you come up with a new function you'd like to upstream to this library, please open a pull request!
+
+```purs
+module MyModule where
+
+import Data.String.Extra (words, kebabCase)
+
+kebabCaseAll :: String -> Array String
+kebabCaseAll = kebabCase <<< words
+```
 
 ## Documentation
 
