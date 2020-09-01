@@ -93,7 +93,6 @@ main = do
     assert $ normalizedCoefficient "ALL TOGETHER" "ALTOGETHER" == (normalize 0.8000000)
     assert $ normalizedCoefficient "IDENTICAL STRINGS" "IDENTICAL STRINGS" == (normalize 1.0000000)
 
-
 normalize :: Number -> Int
 normalize n = Int.round (n * 100000.0)
 
