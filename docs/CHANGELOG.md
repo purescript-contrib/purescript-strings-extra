@@ -12,4 +12,6 @@ Bugfixes:
 
 Other improvements:
 
+- Update casing functions internal implementation of splitting unicode words according to the lodash reference and move regexes up to the top level ([#11](https://github.com/purescript-contrib/purescript-strings-extra/pull/11)).
+
 ## [0.0.0] - 2020-01-01
