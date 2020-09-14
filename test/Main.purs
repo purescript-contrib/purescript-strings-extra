@@ -13,6 +13,7 @@ main = do
     assert $ String.camelCase "" == ""
     assert $ String.camelCase " " == ""
     assert $ String.camelCase "\n" == ""
+    assert $ String.camelCase "ASCII" == "ascii"
     assert $ String.camelCase "🙃" == "🙃"
     assert $ String.camelCase "Thor" == "thor"
     assert $ String.camelCase "Thor, Mímir, Ēostre, & Jörð" == "thorMímirĒostreJörð"
@@ -23,6 +24,7 @@ main = do
     assert $ String.kebabCase "" == ""
     assert $ String.kebabCase " " == ""
     assert $ String.kebabCase "\n" == ""
+    assert $ String.kebabCase "ASCII" == "ascii"
     assert $ String.kebabCase "🙃" == "🙃"
     assert $ String.kebabCase "Thor" == "thor"
     assert $ String.kebabCase "Thor, Mímir, Ēostre, & Jörð" == "thor-mímir-ēostre-jörð"
@@ -33,6 +35,7 @@ main = do
     assert $ String.pascalCase "" == ""
     assert $ String.pascalCase " " == ""
     assert $ String.pascalCase "\n" == ""
+    assert $ String.pascalCase "ASCII" == "Ascii"
     assert $ String.pascalCase "🙃" == "🙃"
     assert $ String.pascalCase "Thor" == "Thor"
     assert $ String.pascalCase "Thor, Mímir, Ēostre, & Jörð" == "ThorMímirĒostreJörð"
@@ -43,6 +46,7 @@ main = do
     assert $ String.snakeCase "" == ""
     assert $ String.snakeCase " " == ""
     assert $ String.snakeCase "\n" == ""
+    assert $ String.snakeCase "ASCII" == "ascii"
     assert $ String.snakeCase "🙃" == "🙃"
     assert $ String.snakeCase "Thor" == "thor"
     assert $ String.snakeCase "Thor, Mímir, Ēostre, & Jörð" == "thor_mímir_ēostre_jörð"
@@ -53,6 +57,7 @@ main = do
     assert $ String.upperCaseFirst "" == ""
     assert $ String.upperCaseFirst " " == " "
     assert $ String.upperCaseFirst "\n" == "\n"
+    assert $ String.upperCaseFirst "ASCII" == "Ascii"
     assert $ String.upperCaseFirst "🙃" == "🙃"
     assert $ String.upperCaseFirst "Thor" == "Thor"
     assert $ String.upperCaseFirst "Thor, Mímir, Ēostre, & Jörð" == "Thor, mímir, ēostre, & jörð"
@@ -63,6 +68,7 @@ main = do
     assert $ String.words "" == []
     assert $ String.words " " == []
     assert $ String.words "\n" == []
+    assert $ String.words "ASCII" == [ "ASCII" ]
     assert $ String.words "🙃" == [ "🙃" ]
     assert $ String.words "Thor" == [ "Thor" ]
     assert $ String.words "Thor, Mímir, Ēostre, & Jörð" == [ "Thor", "Mímir", "Ēostre", "Jörð" ]
