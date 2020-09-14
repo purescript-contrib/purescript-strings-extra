@@ -7,6 +7,7 @@ module Data.String.Extra
   , words
   , levenshtein
   , sorensenDiceCoefficient
+  , upperCaseFirst
   ) where
 
 import Data.Array as Array
