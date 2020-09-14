@@ -9,4 +9,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Other improvements:
 
-- Update casing functions internal implementation of splitting unicod words according to the lodash reference and move regexes up to the top level (#11)
+- Update casing functions internal implementation of splitting unicode words according to the lodash reference and move regexes up to the top level ([#11](https://github.com/purescript-contrib/purescript-strings-extra/pull/11))
