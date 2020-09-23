@@ -30,3 +30,4 @@ This release provides compatibility with PureScript 0.12 but does not change the
 
 ## [v1.0.0](https://github.com/purescript-contrib/purescript-strings-extra/releases/tag/v1.0.0) - 2017-10-02
 
+- Initial release
