@@ -12,6 +12,10 @@ Bugfixes:
 
 Other improvements:
 
+## [v2.2.0](https://github.com/purescript-contrib/purescript-strings-extra/releases/tag/v2.2.1) - 2020-10-02
+
+* Update casing functions internal implementation of splitting unicode words according to the lodash reference and move regexes up to the top level ([#11](https://github.com/purescript-contrib/purescript-strings-extra/pull/11))
+
 ## [v2.2.0](https://github.com/purescript-contrib/purescript-strings-extra/releases/tag/v2.2.0) - 2020-09-13
 
 * Expose `upperCaseFirst` function
