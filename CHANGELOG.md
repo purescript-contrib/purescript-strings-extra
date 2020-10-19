@@ -11,6 +11,8 @@ New features:
 Bugfixes:
 
 Other improvements:
+  - upgrade to latest package set
+  - switch to `Data.String.Regex.Unsafe.unsafeRegex` instade of reinventing it + remove related dependencies for reinventing
 
 ## [v2.2.1](https://github.com/purescript-contrib/purescript-strings-extra/releases/tag/v2.2.1) - 2020-10-02
 
