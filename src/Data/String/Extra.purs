@@ -12,14 +12,13 @@ module Data.String.Extra
 import Data.Array as Array
 import Data.Array.NonEmpty as NonEmptyArray
 import Data.Char.Unicode as Unicode
-import Data.Either (fromRight)
 import Data.Foldable (foldMap)
 import Data.String as String
 import Data.String.CodeUnits as SCU
 import Data.String.Regex (Regex)
 import Data.String.Regex as Regex
+import Data.String.Regex.Unsafe (unsafeRegex)
 import Data.String.Regex.Flags as Flags
-import Partial.Unsafe (unsafePartial)
 import Prelude ((>>>), (<>), ($), map)
 
 -- | Converts a `String` to camel case
@@ -101,7 +100,7 @@ foreign import sorensenDiceCoefficient :: String -> String -> Number
 
 regexGlobal :: String -> Regex
 regexGlobal regexStr =
-  unsafePartial fromRight (Regex.regex regexStr Flags.global)
+  unsafeRegex regexStr Flags.global
 
 regexHasASCIIWords :: Regex
 regexHasASCIIWords =
