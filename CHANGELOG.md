@@ -26,7 +26,7 @@ Other improvements:
 
 ## [v2.1.0](https://github.com/purescript-contrib/purescript-strings-extra/releases/tag/v2.1.0) - 2020-04-08
 
-- Addde Levenshtein distance and Sorensen-Dice coefficient functions (@flip111)
+- Added Levenshtein distance and Sorensen-Dice coefficient functions (@flip111)
 
 ## [v2.0.0](https://github.com/purescript-contrib/purescript-strings-extra/releases/tag/v2.0.0) - 2018-06-20
 
