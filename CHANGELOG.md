@@ -5,26 +5,28 @@ Notable changes to this project are documented in this file. The format is based
 ## [Unreleased]
 
 Breaking changes (😱!!!):
+- Added support for PureScript 0.14 and dropped support for all previous versions (#14)
 
 New features:
 
 Bugfixes:
 
 Other improvements:
-  - upgrade to latest package set
-  - switch to `Data.String.Regex.Unsafe.unsafeRegex` instade of reinventing it + remove related dependencies for reinventing
+- Updated `regexGlobal` to use `Data.String.Regex.Unsafe.unsafeRegex` (#13)
+- Changed default branch to `main` from `master`
 
 ## [v2.2.1](https://github.com/purescript-contrib/purescript-strings-extra/releases/tag/v2.2.1) - 2020-10-02
 
-* Update casing functions internal implementation of splitting unicode words according to the lodash reference and move regexes up to the top level ([#11](https://github.com/purescript-contrib/purescript-strings-extra/pull/11))
+- Updated casing functions internal implementation of splitting unicode words according to the lodash reference and move regexes up to the top level ([#11](https://github.com/purescript-contrib/purescript-strings-extra/pull/11))
+- Updated to comply with Contributors library guidelines by adding new issue and pull request templates, updating documentation, and migrating to Spago for local development and CI (#9)
 
 ## [v2.2.0](https://github.com/purescript-contrib/purescript-strings-extra/releases/tag/v2.2.0) - 2020-09-13
 
-* Expose `upperCaseFirst` function
+- Exposed `upperCaseFirst` function
 
 ## [v2.1.0](https://github.com/purescript-contrib/purescript-strings-extra/releases/tag/v2.1.0) - 2020-04-08
 
-Add Levenshtein distance and Sorensen-Dice coefficient functions (@flip111)
+- Added Levenshtein distance and Sorensen-Dice coefficient functions (@flip111)
 
 ## [v2.0.0](https://github.com/purescript-contrib/purescript-strings-extra/releases/tag/v2.0.0) - 2018-06-20
 
