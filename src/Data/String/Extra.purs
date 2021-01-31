@@ -11,10 +11,11 @@ module Data.String.Extra
 
 import Data.Array as Array
 import Data.Array.NonEmpty as NonEmptyArray
-import Data.Char.Unicode as Unicode
+import Data.String.Unicode as Unicode
+import Data.CodePoint.Unicode as UCP
 import Data.Foldable (foldMap)
 import Data.String as String
-import Data.String.CodeUnits as SCU
+import Data.String.CodePoints as SCP
 import Data.String.Regex (Regex)
 import Data.String.Regex as Regex
 import Data.String.Regex.Unsafe (unsafeRegex)
@@ -29,7 +30,7 @@ import Prelude ((>>>), (<>), ($), map)
 camelCase :: String -> String
 camelCase =
   words >>> Array.uncons >>> foldMap \{ head, tail } ->
-    toUnicodeLower head <> foldMap pascalCase tail
+    Unicode.toLower head <> foldMap pascalCase tail
 
 -- | Converts a `String` to kebab case
 -- |
@@ -38,7 +39,7 @@ camelCase =
 -- | ```
 kebabCase :: String -> String
 kebabCase =
-  words >>> map toUnicodeLower >>> String.joinWith "-"
+  words >>> map Unicode.toLower >>> String.joinWith "-"
 
 -- | Converts a `String` to Pascal case
 -- |
@@ -56,7 +57,7 @@ pascalCase =
 -- | ```
 snakeCase :: String -> String
 snakeCase =
-  words >>> map toUnicodeLower >>> String.joinWith "_"
+  words >>> map Unicode.toLower >>> String.joinWith "_"
 
 -- | Converts the first character in a `String` to upper case, lower-casing
 -- | the rest of the string.
@@ -66,8 +67,8 @@ snakeCase =
 -- | ```
 upperCaseFirst :: String -> String
 upperCaseFirst =
-  SCU.uncons >>> foldMap \{ head, tail } ->
-    SCU.singleton (Unicode.toUpper head) <> toUnicodeLower tail
+  SCP.uncons >>> foldMap \{ head, tail } ->
+    SCP.fromCodePointArray (UCP.toTitle head) <> Unicode.toLower tail
 
 -- | Separates a `String` into words based on Unicode separators, capital
 -- | letters, dashes, underscores, etc.
@@ -117,14 +118,6 @@ regexHasUnicodeWords =
 hasUnicodeWords :: String -> Boolean
 hasUnicodeWords =
   Regex.test regexHasUnicodeWords
-
-toUnicodeLower :: String -> String
-toUnicodeLower =
-  SCU.toCharArray >>> map Unicode.toLower >>> SCU.fromCharArray
-
-toUnicodeUpper :: String -> String
-toUnicodeUpper =
-  SCU.toCharArray >>> map Unicode.toUpper >>> SCU.fromCharArray
 
 regexUnicodeWords :: Regex
 regexUnicodeWords =
