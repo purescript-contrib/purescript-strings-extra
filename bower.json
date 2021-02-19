@@ -2,7 +2,9 @@
   "name": "purescript-strings-extra",
   "homepage": "https://github.com/purescript-contrib/purescript-strings-extra",
   "description": "Additional String utilities",
-  "keywords": ["purescript"],
+  "keywords": [
+    "purescript"
+  ],
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -15,7 +17,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/purescript-contrib/purescript-string-extras.git"
+    "url": "https://github.com/purescript-contrib/purescript-strings-extra.git"
   },
   "dependencies": {
     "purescript-strings": "^4.0.1",
