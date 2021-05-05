@@ -5,6 +5,7 @@
   , "console"
   , "effect"
   , "foldable-traversable"
+  , "integers"
   , "maybe"
   , "prelude"
   , "psci-support"
