@@ -11,8 +11,12 @@ New features:
 Bugfixes:
 
 Other improvements:
-- Fix warnings revealed by v0.14.1 PS release (#18 by @JordanMartinez)
-- Install missing dependencies used in source code (#18 by @JordanMartinez)
+
+## [v3.0.1](https://github.com/purescript-contrib/purescript-strings-extra/releases/tag/v3.0.1) - 2021-05-06
+
+Other improvements:
+- Fixed warnings revealed by v0.14.1 PS release (#18 by @JordanMartinez)
+- Installed missing dependencies used in source code (#18 by @JordanMartinez)
 
 ## [v3.0.0](https://github.com/purescript-contrib/purescript-strings-extra/releases/tag/v3.0.0) - 2021-02-26
 
