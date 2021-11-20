@@ -11,6 +11,7 @@ New features:
 Bugfixes:
 
 Other improvements:
+- Added `purs-tidy` formatter (#20 by @thomashoneyman)
 
 ## [v3.0.1](https://github.com/purescript-contrib/purescript-strings-extra/releases/tag/v3.0.1) - 2021-05-06
 
