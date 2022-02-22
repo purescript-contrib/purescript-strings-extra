@@ -3,7 +3,7 @@
 
 // Source: https://github.com/hiddentao/fast-levenshtein/blob/master/levenshtein.js
 // Benchmark: https://jsperf.com/levenshtein-distance2
-exports.levenshtein = function (str1) {
+export function levenshtein(str1) {
   return function (str2) {
     var prevRow = [],
       str2Char = [];
@@ -62,11 +62,11 @@ exports.levenshtein = function (str1) {
 
     return nextCol;
   };
-};
+}
 
 // Source: https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Dice%27s_coefficient#Javascript
 // Benchmark: https://jsperf.com/sorensen-dice-coefficient
-exports.sorensenDiceCoefficient = function (l) {
+export function sorensenDiceCoefficient(l) {
   return function (r) {
     if (l.length < 2 || r.length < 2) return 0;
 
@@ -92,4 +92,4 @@ exports.sorensenDiceCoefficient = function (l) {
 
     return (2.0 * intersectionSize) / (l.length + r.length - 2);
   };
-};
+}
