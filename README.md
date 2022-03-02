@@ -3,7 +3,6 @@
 [![CI](https://github.com/purescript-contrib/purescript-strings-extra/workflows/CI/badge.svg?branch=main)](https://github.com/purescript-contrib/purescript-strings-extra/actions?query=workflow%3ACI+branch%3Amain)
 [![Release](http://img.shields.io/github/release/purescript-contrib/purescript-strings-extra.svg)](https://github.com/purescript-contrib/purescript-strings-extra/releases)
 [![Pursuit](http://pursuit.purescript.org/packages/purescript-strings-extra/badge)](http://pursuit.purescript.org/packages/purescript-strings-extra)
-[![Maintainer: thomashoneyman](https://img.shields.io/badge/maintainer-thomashoneyman-teal.svg)](http://github.com/thomashoneyman)
 
 Additional utilities for the PureScript Strings library.
 
