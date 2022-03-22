@@ -8,7 +8,6 @@
   , "integers"
   , "maybe"
   , "prelude"
-  , "psci-support"
   , "strings"
   , "unicode"
   ]
