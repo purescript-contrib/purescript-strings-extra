@@ -1,6 +1,4 @@
 /* eslint-disable no-undef */
-"use strict";
-
 // Source: https://github.com/hiddentao/fast-levenshtein/blob/master/levenshtein.js
 // Benchmark: https://jsperf.com/levenshtein-distance2
 export function levenshtein(str1) {
