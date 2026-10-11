@@ -1,0 +1,25 @@
+package:
+  name: strings-extra
+  description: Additional String utilities
+  dependencies:
+    - arrays: ">=7.0.0 <8.0.0"
+    - foldable-traversable: ">=6.0.0 <7.0.0"
+    - prelude: ">=6.0.0 <7.0.0"
+    - strings: ">=6.0.0 <7.0.0"
+    - unicode: ">=6.0.0 <7.0.0"
+  test:
+    main: Test.Main
+    dependencies:
+      - assert
+      - console
+      - effect
+      - integers
+  publish:
+    version: 4.0.1
+    license: MIT
+    location:
+      githubOwner: purescript-contrib
+      githubRepo: purescript-strings-extra
+workspace:
+  packageSet:
+    registry: 81.4.0
