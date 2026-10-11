@@ -11,6 +11,10 @@ New features:
 Bugfixes:
 
 Other improvements:
+
+## [v4.0.1](https://github.com/purescript-contrib/purescript-strings-extra/releases/tag/v4.0.1) - 2026-10-11
+
+Other improvements:
 - Migrate to registry-backed Spago and update repository tooling and CI.
 
 ## [v4.0.0](https://github.com/purescript-contrib/purescript-strings-extra/releases/tag/v4.0.0) - 2022-04-27
